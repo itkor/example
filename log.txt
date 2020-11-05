@@ -1,0 +1,12 @@
+bq load -F " " \
+  --quote "" \
+  labwork1:lab.pagecounts_20160108_11 \
+  pagecounts-20160108-110000.gz \
+  language,title,requests:integer,content_size:integer
+
+
+bq load -F " " --quote ""  newproject-273620:data.pagecounts_20160108_11 pagecounts-20160108-110000.gz.2 language,title,requests:integer,content_size:integer
+
+pagecounts-20160108-110000
+
+bq load --project_id=labwork1 -F " " --quote ""  labwork1:lab.pagecounts-20160108-110000 pagecounts-20160108-110000.gz language,title,requests:integer,content_size:integer
